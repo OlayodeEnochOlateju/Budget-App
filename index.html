@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperion Budgets</title>
+    <link rel="stylesheet"
+        href="file:///C:/Users/Darkmatter/Documents/Protected/VScode/ElishaWright/bootstrap-4.5.2/dist/css/bootstrap.min.css">
+    <script
+        src="file:///C:/Users/Darkmatter/Documents/Protected/VScode/ElishaWright/bootstrap-4.5.2/site/docs/4.5/assets/js/vendor/jquery.slim.min.js"></script>
+    <script
+        src="file:///C:/Users/Darkmatter/Documents/Protected/VScode/ElishaWright/bootstrap-4.5.2/dist/js/bootstrap.min.js"></script>
+    <script src="C:\Users\Darkmatter\My VSCodee Projects\Project Budget\BudgetScripting.js"></script>
+    <link rel="stylesheet" href="BudgetStyling.css">
+</head>
+
+<body style="background-color: rgb(17, 17, 17);">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark shadow" style="background-color: rgb(17, 17, 17);">
+        <a href="" class="navbar-brand" style="font-weight: 700;">HYPERION BUDGETS</a>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a href="Dashboard.html" class="nav-link" style="font-weight: 700;">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a href="SpendingHistory.html" class="nav-link" style="font-weight: 700;">History</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col" style="position: absolute;">
+                <div id="myCarousel" class="carousel slide carousel-fade bg-dark" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" style="margin-right: 15px;"
+                            class="active sliden"></li>
+                        <li data-target="#myCarousel" data-slide-to="1" style="margin-right: 15px;" class="sliden"></li>
+                        <li data-target="#myCarousel" data-slide-to="2" style="margin-right: 15px;" class="sliden"></li>
+                        <li data-target="#myCarousel" data-slide-to="3" style="margin-right: 15px;" class="sliden"></li>
+                        <li data-target="#myCarousel" data-slide-to="4" style="margin-right: 15px;" class="sliden"></li>
+                        <li data-target="#myCarousel" data-slide-to="5" style="margin-right: 15px;" class="sliden"></li>
+                        <li data-target="#myCarousel" data-slide-to="6" class="sliden"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-interval="5000ms">
+                            <img src="file:///C:/Users/Darkmatter/Pictures/webimgs/img1.png" alt="" width="100%">
+                        </div>
+                        <div class="carousel-item" data-interval="5000ms">
+                            <img src="file:///C:/Users/Darkmatter/Pictures/webimgs/img2.png" alt="" width="100%">
+                        </div>
+                        <div class="carousel-item" data-interval="5000ms">
+                            <img src="file:///C:/Users/Darkmatter/Pictures/webimgs/img3.png" alt="" width="100%">
+                        </div>
+                        <div class="carousel-item" data-interval="5000ms">
+                            <img src="file:///C:/Users/Darkmatter/Pictures/webimgs/img4.png" alt="" width="100%">
+                        </div>
+                        <div class="carousel-item" data-interval="5000ms">
+                            <img src="file:///C:/Users/Darkmatter/Pictures/webimgs/img5.png" alt="" width="100%">
+                        </div>
+                        <div class="carousel-item" data-interval="5000ms">
+                            <img src="file:///C:/Users/Darkmatter/Pictures/webimgs/img6.png" alt="" width="100%">
+                        </div>
+                        <div class="carousel-item" data-interval="5000ms">
+                            <img src="file:///C:/Users/Darkmatter/Pictures/webimgs/img7.png" alt="" width="100%">
+                        </div>
+                    </div>
+                    <p class="carousel-control-prev" data-target="#myCarousel" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </p>
+                    <p class="carousel-control-next" data-target="#myCarousel" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card p-3 shadow"
+            style="z-index: 9; width: 700px; margin-left: 400px; margin-top: 150px; background-color: rgba(15, 15, 15, 0.678); border-radius: 30px; text-align: center;">
+            <div style="padding: 50px;">
+                <div class="form-row mb-5">
+                    <h5 class="text-success mb-4" style="margin-left: 195px;">Add a Daily Budget</h5>
+                    <div class="input-group">
+                        <input type="text" id="nameBTag" class="form-control firstForm" placeholder="First Name">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group col" style="margin-left: -5px !important;">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text is-valid bg-light" style="font-weight: 600;">₦</div>
+                        </div>
+                        <input type="number" id="budgettag" class="form-control firstForm"
+                            placeholder="Budget for the Day">
+                    </div>
+                    <div class="input-group col" style="margin-right: -5px !important;">
+                        <input type="date" id="daytag" class="form-control firstForm" placeholder="date">
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;" class="pb-5">
+                <button class="btn btn-success" onclick="acceptor(), window.location.href='Dashboard.html'" id="unsaver"
+                    style="width: 190px; outline: none!important; font-weight: 700; border-radius: 30px;">Start Saving Now!</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.body.style.overflow = 'hidden';
+    </script>
+</body>
+
+</html>

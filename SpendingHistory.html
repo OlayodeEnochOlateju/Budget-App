@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spending History</title>
+    <link rel="stylesheet"
+        href="file:///C:/Users/Darkmatter/Documents/Protected/VScode/ElishaWright/bootstrap-4.5.2/dist/css/bootstrap.min.css">
+    <script
+        src="file:///C:/Users/Darkmatter/Documents/Protected/VScode/ElishaWright/bootstrap-4.5.2/site/docs/4.5/assets/js/vendor/jquery.slim.min.js"></script>
+    <script
+        src="file:///C:/Users/Darkmatter/Documents/Protected/VScode/ElishaWright/bootstrap-4.5.2/dist/js/bootstrap.min.js"></script>
+    <script src="C:\Users\Darkmatter\My VSCodee Projects\Project Budget\BudgetScripting.js"></script>
+    <link rel="stylesheet" href="BudgetStyling.css">
+</head>
+
+
+<body onload="displayhist()" style="background-color: rgb(17, 17, 17);">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark shadow" style="background-color: rgb(17, 17, 17);">
+        <a href="" class="navbar-brand" style="font-weight: 700;">HYPERION BUDGETS</a>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a href="Dashboard.html" class="nav-link" style="font-weight: 700;">Dashboard</a>
+            </li>
+            <li class="nav-item active">
+                <a href="SpendingHistory.html" class="nav-link pl-3 pr-3"
+                    style="font-weight: 700; background-image: linear-gradient(to bottom,rgb(42, 185, 76), rgb(22, 129, 47)); border-radius: 30px;">History</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="text-light mt-5">
+        <h5
+            style="font-weight:600; width: 142px; padding-left: 20px; padding-top: 3px; padding-bottom: 3px; margin-left: 34px; margin-bottom: 0px; background-image: linear-gradient(to bottom,rgb(42, 185, 76), rgb(22, 129, 47)); border-top-left-radius: 30px; border-top-right-radius: 30px; ">
+            Full History</h5>
+    </div>
+    <div class="container-fluid pl-5 pr-5">
+        <div class="row text-light mb-5 pl-3 pr-3 pb-4 shadow"  style="font-weight: 600; background-image: linear-gradient(to bottom, rgb(34, 33, 33), rgb(17, 17, 17)); border-radius: 30px; border-top-left-radius: 0px; border: 2px solid rgb(17, 17, 17);">
+            <div class="col pt-3 p-0" id="dateStamper" style="text-align: left;">
+                
+            </div>
+            <div class="col pt-3 p-0" id="timeStamper" style="text-align: center;">
+
+            </div>
+            <div class="col pt-3 p-0" id="amountStamper" style="text-align: center;">
+
+            </div>
+            <div class="col pt-3 p-0" id="statusStamper" style="text-align: center;">
+
+            </div>
+            <div class="col pt-3 p-0" id="descriStamper" style="text-align: center;">
+
+            </div>
+            <div class="col pt-3 p-0" id="benefStamper" style="text-align: right;">
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid top-shadow" style="background-color: rgb(29, 29, 29); margin-top: 130px;">
+        <div class="row">
+            <div class="col p-3 text-light" style="text-align: center;">
+                <h1>HYPERION BUDGETS</h1>
+                <h6>All Rights Reserved MXIM</h6>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperion Budgets</title>
+    <link rel="stylesheet"
+        href="file:///C:/Users/Darkmatter/Documents/Protected/VScode/ElishaWright/bootstrap-4.5.2/dist/css/bootstrap.min.css">
+    <script
+        src="file:///C:/Users/Darkmatter/Documents/Protected/VScode/ElishaWright/bootstrap-4.5.2/site/docs/4.5/assets/js/vendor/jquery.slim.min.js"></script>
+    <script
+        src="file:///C:/Users/Darkmatter/Documents/Protected/VScode/ElishaWright/bootstrap-4.5.2/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="BudgetStyling.css">
+    <script src="file:///C:/Users/Darkmatter/Documents/Protected/Others/jquery-3.5.1.min.js"></script>
+    <script src="C:\Users\Darkmatter\My VSCodee Projects\Project Budget\BudgetScripting.js"></script>
+</head>
+
+<body onload="displaystats()" style="background-color: rgb(17, 17, 17);">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark shadow" style="background-color: rgb(17, 17, 17);">
+        <a href="" class="navbar-brand" style="font-weight: 700;">HYPERION BUDGETS</a>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a href="Dashboard.html" class="nav-link pl-3 pr-3"
+                    style="font-weight: 700; background-image: linear-gradient(to bottom,rgb(42, 185, 76), rgb(22, 129, 47)); border-radius: 30px;">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a href="SpendingHistory.html" class="nav-link" style="font-weight: 700;">History</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="modal fade" data-backdrop="static" id="newbudgetModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-success">Add a new Budget</h5>
+                    <button class="close" data-dismiss="modal" style="outline: none;">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div style="padding: 50px;">
+                        <div class="form-row mb-2">
+                            <div class="input-group">
+                                <input type="text" id="nameBTag" class="form-control" placeholder="First Name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="input-group col" style="margin-left: -5px !important;">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text is-valid bg-light" style="font-weight: 600;">₦</div>
+                                </div>
+                                <input type="number" id="budgettag" class="form-control"
+                                    placeholder="Budget for the Day">
+                            </div>
+                            <div class="input-group col" style="margin-right: -5px !important;">
+                                <input type="date" id="daytag" class="form-control" placeholder="date">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" onclick="acceptor(), window.location.href='Dashboard.html'"
+                        id="unsaver"
+                        style="width: 190px; outline: none!important; font-weight: 700; border-radius: 30px; margin-right: 130px;">Start
+                        Saving Now!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row p-5">
+            <div class="col-4">
+                <div class="row border border-success pt-2 pb-2 shadow"
+                    style="border-radius: 59px; background-image: linear-gradient(to bottom, rgb(34, 33, 33), rgb(17, 17, 17));">
+                    <div class="col-2">
+                        <img src="file:///C:/Users/Darkmatter/Pictures/avatar.png"
+                            style="border-radius: 50px; margin-left: -5px;" width="100px" alt="">
+                    </div>
+                    <div class="col text-light" id="nameSpace"
+                        style="font-weight: 600; font-size: 30px; margin-left: 60px; text-align: left;">
+                    </div>
+                </div>
+            </div>
+            <div class="col text-light" id="dayofDate">
+
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col text-light" id="budgetSpace"
+                        style="font-weight: 600; font-size: 30px; margin-left: 100px; text-align: center;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="progress"
+                            style="height: 3px; margin-left: 150px; border-radius: 50px; width: 120px;">
+                            <div id="longer" class="progress-bar bg-success" style=" width: 100%; border-radius: 50px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-success pl-3 pr-3 secondButton" data-toggle="modal"
+                            data-target="#newbudgetModal"
+                            style="margin-left: 126px; margin-top: 10px; border-radius: 30px; font-weight: 700; background-image: linear-gradient(to bottom,rgb(42, 185, 76), rgb(22, 129, 47));">Add
+                            a new Budget</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="text-light">
+            <h5
+                style="font-weight:600; width: 250px; padding-left: 20px; padding-top: 3px; padding-bottom: 3px; margin-top: 50px; margin-left: 200px; margin-bottom: 0px; background-image: linear-gradient(to bottom,rgb(42, 185, 76), rgb(22, 129, 47)); border-top-left-radius: 30px; border-top-right-radius: 30px; ">
+                Add a new Transaction</h5>
+        </div>
+        <div id="debitTag" class="card p-3 shadow"
+            style="z-index: 9; transition: 0.7s; width: 700px; margin-left: 200px; margin-bottom: 100px; background-image: linear-gradient(to bottom, rgb(34, 33, 33), rgb(17, 17, 17)); border-radius: 30px; text-align: center; border-top-left-radius: 0px;">
+            <div style="padding: 50px;">
+                <div class="form-row mb-5">
+                    <h5 class="text-success mb-4" style="margin-left: 195px;">Add a new Debit</h5>
+                    <div class="input-group">
+                        <input type="" id="BenefTag" placeholder="Beneficiary" class="form-control"
+                            style="font-weight: 600; text-align: center;">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group col" style="margin-left: -5px !important;">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text is-valid bg-light" style="font-weight: 600;">₦</div>
+                        </div>
+                        <input type="number" id="expAmounttag" placeholder="amount" class="form-control"
+                            style="font-weight: 600; text-align: center;">
+                    </div>
+                    <div class="input-group col" style="margin-right: -5px !important;">
+                        <input type="text" id="Desctag" placeholder="description" class="form-control"
+                            style="font-weight: 600; text-align: center;">
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;" class="pb-5">
+                <button class="btn btn-success" onclick="updator()" id="unsaver"
+                    style="width: 190px; outline: none!important; font-weight: 700; border-radius: 30px;">Update
+                    Spending</button>
+                <button class="btn btn-success rounded-circle" id="revealCredit">&plus;</button>
+            </div>
+        </div>
+        <div id="creditTag" class="card p-3 shadow"
+            style="z-index: 9; transition: 0.7s; width: 700px; margin-left: 200px; margin-bottom: 100px; background-image: linear-gradient(to bottom, rgb(248, 248, 248), rgb(231, 231, 231)); border-radius: 30px; text-align: center; border-top-left-radius: 0px;">
+            <div style="padding: 50px;">
+                <div class="form-row mb-5">
+                    <h5 class="text-success mb-4" style="margin-left: 195px;">Add a new Credit</h5>
+                    <div class="input-group">
+                        <input type="" id="BenefTagg" placeholder="Beneficiary" class="form-control"
+                            style="font-weight: 600; text-align: center;">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group col" style="margin-left: -5px !important;">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text is-valid bg-light" style="font-weight: 600;">₦</div>
+                        </div>
+                        <input type="number" id="expAmounttagg" placeholder="amount" class="form-control"
+                            style="font-weight: 600; text-align: center;">
+                    </div>
+                    <div class="input-group col" style="margin-right: -5px !important;">
+                        <input type="text" id="Desctagg" placeholder="description" class="form-control"
+                            style="font-weight: 600; text-align: center;">
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;" class="pb-5">
+                <button class="btn btn-success rounded-circle" id="revealDebit">&minus;</button>
+                <button class="btn btn-success" onclick="updatorCr()" id="unsaver"
+                    style="width: 190px; outline: none!important; font-weight: 700; border-radius: 30px;">Update
+                    Spending</button>
+            </div>
+        </div>
+        <div class="text-light">
+            <h5
+                style="font-weight:600; width: 220px; padding-left: 20px; padding-top: 3px; padding-bottom: 3px; margin-left: -13px; margin-bottom: 0px; background-image: linear-gradient(to bottom,rgb(42, 185, 76), rgb(22, 129, 47)); border-top-left-radius: 30px; border-top-right-radius: 30px; ">
+                Transactions Today</h5>
+        </div>
+        <div class="row card-deck text-light mb-5" style="font-weight: 600;">
+            <div class="col-9 card shadow ml-0 pb-4"
+                style="background-image: linear-gradient(to bottom, rgb(34, 33, 33), rgb(17, 17, 17)); border-radius: 30px; border-top-left-radius: 0px; border: 2px solid rgb(17, 17, 17);">
+                <div class="row pl-3 pr-3">
+                    <div class="col pt-3 p-0" id="timeStamp" style="text-align: left;">
+                        Time
+                    </div>
+                    <div class="col pt-3 p-0" id="amountStamp" style="text-align: center;">
+                        Amount
+                    </div>
+                    <div class="col pt-3 p-0" id="statusStamp" style="text-align: center;">
+                        Status
+                    </div>
+                    <div class="col pt-3 p-0" id="descriStamp" style="text-align: right;">
+                        Description
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 pl-3 pr-3 pt-3 card shadow bg-success mr-0 ml-0" id="benefStamp"
+                style="text-align: center; background-image: linear-gradient(to bottom,rgb(42, 185, 76), rgb(22, 129, 47));  border-radius: 30px; border: 2px solid rgb(42, 185, 76);">
+                Beneficiaries
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid top-shadow" style="background-color: rgb(29, 29, 29); margin-top: 130px;">
+        <div class="row">
+            <div class="col p-3 text-light" style="text-align: center;">
+                <h1>HYPERION BUDGETS</h1>
+                <h6>All Rights Reserved MXIM</h6>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#creditTag").hide()
+            $("#revealCredit").on("click", function () {
+                $("#creditTag").toggle()
+                $("#debitTag").toggle()
+            })
+            $("#revealDebit").on("click", function () {
+                $("#creditTag").toggle()
+                $("#debitTag").toggle()
+            })
+        })
+    </script>
+</html>
